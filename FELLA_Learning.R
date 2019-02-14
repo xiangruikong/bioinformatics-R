@@ -59,5 +59,33 @@ plot(
   dev.off()
   getwd()
 #5.Exporting the results
-
-
+#generateRrsultsTable()
+tab.all <- generateResultsTable(
+    method = "diffusion",
+    #nlimit = 100,
+    object = analysis.epithelial,
+    data = fella.data)
+write.table(tab.all, file = "foo.csv", sep = ",", col.names = TRUE,
+            qmethod = "double")
+# Show head of the table
+knitr::kable(head(tab.all), format = "latex")
+#generateEnzymesTable()
+# # is to a tabular format with details from the enzymes reported 
+# among the top k KEGG entries. In particular,the table contains 
+# the genes that belong to each enzyme family
+tab.enzyme <- generateEnzymesTable(
+  method = "diffusion",
+  nlimit = 100,
+  object = analysis.epithelial,
+  data = fella.data)
+# Show head of the table
+knitr::kable(head(tab.enzyme, 10), format = "latex")
+#exportResults()
+tmpfile <-tempfile()
+exportResults(
+  format = "csv",
+  file = tmpfile,
+  method = "diffusion",
+  object = analysis.epithelial,
+  data = fella.data)
+??tempfile()
