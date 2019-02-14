@@ -47,6 +47,7 @@ analysis.epithelial <- runDiffusion(
   approx = "normality")
 analysis.epithelial
 #4.plot
+pdf("mygraph.pdf")
 nlimit <- 220
 vertex.label.cex <- .5
 plot(
@@ -54,7 +55,9 @@ plot(
   method = "diffusion",
   data = fella.data,
   nlimit = nlimit,
-  vertex.label.cex = vertex.label.cex)
+  vertex.label.cex = vertex.label.cex) 
+  dev.off()
+  getwd()
 #5.Exporting the results
 
 
