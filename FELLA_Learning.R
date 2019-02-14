@@ -1,4 +1,7 @@
 #Title: learning how to use fella packages
+#Organism:ath
+#Species:Arabidopsis thaliana (thale cress)
+#Phylogeny:Eukaryotes;Plants;Eudicots;Mustard family
 #Author: xiangruikong
 #E-mail:xiangruikong@bioxxx.cn
 #Time: 2019-02-13
