@@ -88,4 +88,7 @@ exportResults(
   method = "diffusion",
   object = analysis.epithelial,
   data = fella.data)
-??tempfile()
+#find which organisms can create databases
+library(KEGGREST)
+res<- keggList("organism")
+head(res)
